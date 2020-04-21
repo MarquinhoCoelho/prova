@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="estilo.css">
+    <title>exercicio-3</title>
+</head>
+<body class="fundo">
+    <section class="a">
+    <div id="valor"></div>
+    
+    <label for="cTexto"><input type="text" name="tTexto" id="cTexto" placeholder="escreva aqui..."></label>
+    <button onclick="gerar()"> Adicionar </button><br><br>
+    
+    <script>
+
+function gerar (){
+
+    var cont = 0;
+    while (cont != 1){
+        var p = document.createElement("p");
+        var valor = document.getElementById('cTexto').value;
+        p.innerHTML = valor;
+        
+        document.getElementById("valor").appendChild(p);
+        cont = cont+1;
+    }
+
+    }
+        </script>
+        
+        </section>
+        <hr>
+</body>
+</html>

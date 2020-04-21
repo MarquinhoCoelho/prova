@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
+    <title>exercicio-5</title>
+</head>
+<style>
+    body{
+        position: relative;
+        top:-50px
+    }
+</style>
+
+<body class="fundo">
+    <section class="a">
+
+   
+        <fieldset id="usuario">
+            Identificação do Usuário
+                <p><label for="cNome"> Nome</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome completo..."/></p>
+                <div id="resposta1" class="red"></div>
+                <p><label for="cSenha"> Senha </label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 digitos..."></p>
+                <div id="resposta2" class="red"></div>
+                <p><label for="cEmail"> E-mail </label><input type="email" name="tEmail" id="cEmail" size="20" maxlength="40" placeholder="Digite seu e-mail..."</p>
+                <div id="resposta3"class="red"></div>
+                <p><label for="cIdade"> Idade </label><input type="number" name="tIdade" id="cIdade" size="20" maxlength="3" placeholder="Idade..."/></p>
+                <div id="resposta4" class="red"></div>  
+            </fieldset> <br>
+            
+            <button onclick="cadastrar()" >Cadastrar</button> 
+            <button onclick="location.reload()" >Atualizar</button>
+            <div id="resposta"></div>
+            <div id="respostaRED"></div>
+            
+            <script>
+            var umavez = false;    
+               
+            function cadastrar(){ 
+                  
+                var nome = document.getElementById('cNome').value;
+                var senha = document.getElementById('cSenha').value;
+                var email = document.getElementById('cEmail').value;
+                var idade = document.getElementById('cIdade').value;
+                var respostaNome;
+                var respostaSenha;
+                var respostaEmail;
+                var respostaIdade;
+                
+                if(!umavez){
+                if (nome == ""){
+                    respostaNome = false;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Digite um nome";
+            
+                    var resultado = document.getElementById("resposta1").appendChild(p);
+                    umavez = true;
+
+                    respostaNome = true;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Erro ao cadastrar pessoa.";
+                    var resultado = document.getElementById("respostaRED").appendChild(p);
+                    
+                }
+                
+                else if (senha == ""){
+                    
+                    respostaSenha = false;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Digite uma senha";
+            
+                    var resultado = document.getElementById("resposta2").appendChild(p);
+                    umavez = true;
+
+                    respostaNome = true;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Erro ao cadastrar pessoa.";
+                    var resultado = document.getElementById("resposta").appendChild(p);
+                }
+            
+            
+                else if (email == ""){
+                    respostaEmail = false;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Digite um Email";
+            
+                    var resultado = document.getElementById("resposta3").appendChild(p);
+                    umavez = true;
+                    respostaNome = true;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Erro ao cadastrar pessoa.";
+                    var resultado = document.getElementById("resposta").appendChild(p);
+                }
+               else if (idade == ""){
+                    respostaIdade = false;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Digite uma idade";
+            
+                    var resultado = document.getElementById("resposta4").appendChild(p);
+                    umavez = true;
+                    
+                    respostaNome = true;
+                    var p = document.createElement('p');
+                    p.innerHTML = "Erro ao cadastrar pessoa.";
+                    var resultado = document.getElementById("resposta").appendChild(p);
+                }
+            
+            
+                else{
+                    respostaNome = true;   
+                    var p = document.createElement('p');
+                    p.innerHTML = "Pessoa cadastrada com sucesso";
+                    var resultado = document.getElementById("resposta").appendChild(p);
+                    umavez = true;
+                }
+            }
+            }
+          
+            </script>
+
+
+    </section>
+    <hr>
+</body>
+
+</html>
